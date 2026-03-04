@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+*.json.output
+apt_hunt_*.stix.json
+apt_hunt_*.html
+scan_results_*.json
+.DS_Store
