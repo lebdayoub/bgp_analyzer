@@ -1,0 +1,76 @@
+<svg width="760" height="310" viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#58a6ff" opacity="0.8"/>
+    </marker>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3fb950" opacity="0.8"/>
+    </marker>
+    <style>
+      .mono { font-family:'Courier New',monospace; }
+      .e    { stroke-dasharray:5,3; animation:dash 1.8s linear infinite; }
+      .e2   { stroke-dasharray:5,3; animation:dash 1.8s linear infinite; }
+      .p1   { animation:pop 0.5s ease 0.1s both; }
+      .p2   { animation:pop 0.5s ease 0.25s both; }
+      .p3   { animation:pop 0.5s ease 0.4s both; }
+      .p4   { animation:pop 0.5s ease 0.55s both; }
+      .p5   { animation:pop 0.5s ease 0.7s both; }
+      .p6   { animation:pop 0.5s ease 0.9s both; }
+      @keyframes dash { to { stroke-dashoffset:-16; } }
+      @keyframes pop  { from{opacity:0;transform:scale(0.75)} to{opacity:1;transform:scale(1)} }
+    </style>
+  </defs>
+  <rect width="760" height="310" fill="#0d1117" rx="10" stroke="#21262d" stroke-width="1"/>
+
+  <!-- SEED -->
+  <g class="p1">
+    <rect x="300" y="20" width="160" height="38" fill="#1a1f2e" stroke="#f78166" stroke-width="1.5" rx="7"/>
+    <text x="380" y="44" text-anchor="middle" class="mono" font-size="13" fill="#f78166" font-weight="bold">SEED IOC</text>
+  </g>
+  <text x="380" y="76" text-anchor="middle" class="mono" font-size="10" fill="#6e7681">IP · Domain · Hash · ASN</text>
+
+  <!-- boxes row 2 -->
+  <g class="p2">
+    <rect x="20" y="110" width="148" height="56" fill="#0d1117" stroke="#388bfd" stroke-width="1.2" rx="7"/>
+    <text x="94" y="130" text-anchor="middle" class="mono" font-size="11" fill="#58a6ff" font-weight="bold">TLS / crt.sh</text>
+    <text x="94" y="146" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">SAN pivoting</text>
+    <text x="94" y="158" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">cert history</text>
+  </g>
+  <g class="p3">
+    <rect x="196" y="110" width="148" height="56" fill="#0d1117" stroke="#388bfd" stroke-width="1.2" rx="7"/>
+    <text x="270" y="130" text-anchor="middle" class="mono" font-size="11" fill="#58a6ff" font-weight="bold">BGP / RIPEstat</text>
+    <text x="270" y="146" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">prefix history</text>
+    <text x="270" y="158" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">origin changes</text>
+  </g>
+  <g class="p4">
+    <rect x="372" y="110" width="148" height="56" fill="#0d1117" stroke="#388bfd" stroke-width="1.2" rx="7"/>
+    <text x="446" y="130" text-anchor="middle" class="mono" font-size="11" fill="#58a6ff" font-weight="bold">RPKI / IRR</text>
+    <text x="446" y="146" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">route validity</text>
+    <text x="446" y="158" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">hijack detection</text>
+  </g>
+  <g class="p5">
+    <rect x="548" y="110" width="148" height="56" fill="#0d1117" stroke="#388bfd" stroke-width="1.2" rx="7"/>
+    <text x="622" y="130" text-anchor="middle" class="mono" font-size="11" fill="#58a6ff" font-weight="bold">Hash Pivot</text>
+    <text x="622" y="146" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">MalwareBazaar</text>
+    <text x="622" y="158" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">ThreatFox</text>
+  </g>
+
+  <!-- CLUSTER -->
+  <g class="p6">
+    <rect x="170" y="240" width="420" height="46" fill="#0d1117" stroke="#3fb950" stroke-width="1.5" rx="7"/>
+    <text x="380" y="261" text-anchor="middle" class="mono" font-size="12" fill="#3fb950" font-weight="bold">Infrastructure Cluster Map</text>
+    <text x="380" y="277" text-anchor="middle" class="mono" font-size="9" fill="#6e7681">IPs · Domains · Hashes · ASN groups · C2 candidates</text>
+  </g>
+
+  <!-- edges seed → boxes -->
+  <line x1="380" y1="58" x2="95"  y2="110" stroke="#388bfd" stroke-width="1" opacity="0.5" marker-end="url(#a1)" class="e"/>
+  <line x1="380" y1="58" x2="270" y2="110" stroke="#388bfd" stroke-width="1" opacity="0.5" marker-end="url(#a1)" class="e" style="animation-delay:-0.4s"/>
+  <line x1="380" y1="58" x2="446" y2="110" stroke="#388bfd" stroke-width="1" opacity="0.5" marker-end="url(#a1)" class="e" style="animation-delay:-0.8s"/>
+  <line x1="380" y1="58" x2="622" y2="110" stroke="#388bfd" stroke-width="1" opacity="0.5" marker-end="url(#a1)" class="e" style="animation-delay:-1.2s"/>
+
+  <!-- edges boxes → cluster -->
+  <line x1="95"  y1="166" x2="260" y2="240" stroke="#3fb950" stroke-width="1" opacity="0.4" marker-end="url(#a2)" class="e2" style="animation-delay:-0.2s"/>
+  <line x1="270" y1="166" x2="320" y2="240" stroke="#3fb950" stroke-width="1" opacity="0.4" marker-end="url(#a2)" class="e2" style="animation-delay:-0.6s"/>
+  <line x1="446" y1="166" x2="430" y2="240" stroke="#3fb950" stroke-width="1" opacity="0.4" marker-end="url(#a2)" class="e2" style="animation-delay:-1.0s"/>
+  <line x1="622" y1="166" x2="530" y2="240" stroke="#3fb950" stroke-width="1" opacity="0.4" marker-end="url(#a2)" class="e2" style="animation-delay:-1.4s"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#58a6ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#58a6ff;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
+    <style>
+      .t  { font-family:'Courier New',monospace; fill:#58a6ff; font-size:28px; font-weight:bold; }
+      .s  { font-family:'Courier New',monospace; fill:#8b949e; font-size:13px; }
+      .g  { font-family:'Courier New',monospace; fill:#3fb950; font-size:11px; }
+      .d1 { fill:#58a6ff; animation:pulse 2s ease-in-out infinite; }
+      .d2 { fill:#58a6ff; animation:pulse 2s ease-in-out 0.4s infinite; }
+      .d3 { fill:#58a6ff; animation:pulse 2s ease-in-out 0.8s infinite; }
+      .d4 { fill:#58a6ff; animation:pulse 2s ease-in-out 0.2s infinite; }
+      .d5 { fill:#58a6ff; animation:pulse 2s ease-in-out 0.6s infinite; }
+      .d6 { fill:#58a6ff; animation:pulse 2s ease-in-out 1.0s infinite; }
+      .sl { animation:scan 3s linear infinite; }
+      @keyframes pulse { 0%,100%{opacity:0.15} 50%{opacity:0.7} }
+      @keyframes scan  { from{x:-200px} to{x:900px} }
+    </style>
+  </defs>
+  <rect width="800" height="120" fill="url(#bg)" rx="8"/>
+  <rect class="sl" x="-200" y="0" width="200" height="120" fill="url(#glow)" opacity="0.07" filter="url(#blur)"/>
+  <circle cx="30"  cy="20"  r="2" class="d1"/>
+  <circle cx="80"  cy="50"  r="2" class="d2"/>
+  <circle cx="55"  cy="95"  r="2" class="d3"/>
+  <circle cx="750" cy="25"  r="2" class="d4"/>
+  <circle cx="770" cy="75"  r="2" class="d5"/>
+  <circle cx="730" cy="100" r="2" class="d6"/>
+  <rect width="800" height="120" fill="none" stroke="#30363d" stroke-width="1" rx="8"/>
+  <text x="400" y="50" text-anchor="middle" class="t">bgp_analyzer</text>
+  <text x="400" y="74" text-anchor="middle" class="s">BGP · RPKI · TLS Pivoting · APT Infrastructure Mapping</text>
+  <text x="400" y="96" text-anchor="middle" class="g">▸ Defensive Threat Intelligence Research</text>
+</svg>
